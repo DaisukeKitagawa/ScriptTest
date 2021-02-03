@@ -50,17 +50,17 @@ public class Boss
 
     public void Magic (int mp)
     {
-        for (int i = 0; i <=11; i--)
+        for (int i = 0; i < 11; i++)
         {
             this.mp -= mp;
-        }
-        if (mp <= 0)
-        {
-            Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
-        }
-        else if ( mp >= 0)
-        {
-            Debug.Log("MPが足りないため魔法が使えない。");
+            if( this.mp >= 0)
+            {
+                Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
+            }
+            else
+            {
+                Debug.Log("MPが足りないため魔法が使えない。");
+            }
         }
     }
 }
