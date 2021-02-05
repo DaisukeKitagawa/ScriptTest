@@ -58,9 +58,9 @@ public class Boss
 
     public void Magic (int mp)
     {
-        this.mpmp -= mp;
-        if (mpmp > 0)
+        if (mpmp > 4)
         {
+            this.mpmp -= mp;
             Debug.Log("魔法攻撃をした。残りMPは" + mpmp);
         }
         else
