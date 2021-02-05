@@ -28,14 +28,22 @@ public class Test : MonoBehaviour
 
         lastboss.Attack();
         lastboss.Defence(3);
-        lastboss.Magic(5);
+        {
+            int mp = 53;
+            for (int i = 0; i < 11; i++)
+            {
+                lastboss.Magic(5);
+            }
+        }
+        
+
     }
 }
 public class Boss
 {
     private int hp = 100;
     private int power = 25;
-    private int mp = 53;
+    private int mpmp = 53;
 
     public void Attack()
     {
@@ -50,17 +58,15 @@ public class Boss
 
     public void Magic (int mp)
     {
-        for (int i = 0; i < 11; i++)
+        this.mpmp -= mp;
+        if (mpmp > 0)
         {
-            this.mp -= mp;
-            if( this.mp >= 0)
-            {
-                Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
-            }
-            else
-            {
-                Debug.Log("MPが足りないため魔法が使えない。");
-            }
+            Debug.Log("魔法攻撃をした。残りMPは" + mpmp);
         }
+        else
+        {
+            Debug.Log("MPが足りないため魔法が使えない。");
+        }
+
     }
 }
